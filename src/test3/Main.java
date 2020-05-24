@@ -13,6 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        System.out.println("概率是" + main.cal());
+        System.out.println("概率是:" + main.cal());
     }
 }

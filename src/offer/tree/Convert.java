@@ -11,23 +11,19 @@ public class Convert {
     TreeNode tail = null;//链表尾结点，从最左叶子结点按中序遍历顺序一直移动到最右叶子结点
 
     public TreeNode Convert(TreeNode pRootOfTree) {
-        convertLDR(pRootOfTree);
-        return head;
-    }
-
-    private void convertLDR(TreeNode pRootOfTree) {
-        if (pRootOfTree == null) return;
+        if (pRootOfTree == null) return null;
         Convert(pRootOfTree.left);
 
         if (head == null) {
-            head = pRootOfTree;//最左叶子结点
+            head = pRootOfTree;
             tail = pRootOfTree;
         } else {
-            tail.right = pRootOfTree;
-            pRootOfTree.left = tail;
-            tail = pRootOfTree;
+            tail.right = pRootOfTree;//tail的右指针指向当前结点
+            pRootOfTree.left = tail;//当前结点的左指针指向tail结点
+            tail = pRootOfTree;//将tail指向当前结点
         }
 
         Convert(pRootOfTree.right);
+        return head;
     }
 }

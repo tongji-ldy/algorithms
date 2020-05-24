@@ -1,0 +1,21 @@
+import static java.util.Arrays.sort;
+import static java.util.Arrays.binarySearch;
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] numsCopy = new int[nums.length];
+        System.arraycopy(nums, 0, numsCopy, 0, nums.length);
+        sort(nums);
+        for (int i = 0; i < numsCopy.length; i++) {
+            int k = binarySearch(nums, target - numsCopy[i]);
+            if (k >= 0) {
+                for (int j = 0; j < numsCopy.length; j++) {
+                    if (nums[k] == numsCopy[j] && i != j) {
+                        return new int[]{i, j};
+                    }
+                }
+            }
+        }
+        return null;
+    }
+}

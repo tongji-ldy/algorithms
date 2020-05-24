@@ -1,11 +1,18 @@
 package offer.linkedlist;
 
+import java.util.Scanner;
+
 /**
  * 快排
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] a = {1, 2, 4, 3, 6, 5};
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
         sort(a, 0, a.length - 1);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
@@ -39,5 +46,4 @@ public class QuickSort {
         a[i] = a[j];
         a[j] = temp;
     }
-
 }

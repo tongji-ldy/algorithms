@@ -21,3 +21,23 @@ public class FindKthToTail {
         else return pre;
     }
 }
+
+//public class Solution {
+//    public ListNode FindKthToTail(ListNode head,int k) {
+//        ListNode pre = head;
+//        ListNode next = head;
+//
+//        for (int i = k; i > 0; i--) {
+//            if (head == null) return null;
+//            head = head.next;
+//            next = head;
+//        }
+//
+//        while (next != null) {
+//            next = next.next;
+//            pre = pre.next;
+//        }
+//
+//        return pre;
+//    }
+//}
